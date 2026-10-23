@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "chaithracs/a"
+        DOCKER_IMAGE = "chaithracs/b"
     }
 
     stages {
@@ -22,7 +22,7 @@ pipeline {
         stage('Login to Docker Hub') {
             steps {
                 withCredentials([string(
-                    credentialsId: 'dockerhub-PAT',
+                    credentialsId: 'dockerhub-PAT1',
                     variable: 'DOCKER_PAT'
                 )]) {
                     bat '''
